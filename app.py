@@ -63,7 +63,7 @@ class app():
             freqs, times, D = librosa.reassigned_spectrogram(y, fill_nan=True)
             times = librosa.times_like(cent)
             fig, ax = plt.subplots(figsize=(30,20))
-            librosa.display.specshow(librosa.amplitude_to_db(S, ref=np.max),
+            librosa.display.specshow(librosa.amplitude_to_db(S, ref=np.max),sr=sr,
                                      y_axis='log', x_axis='time', ax=ax)
             ax.plot(times, cent.T, label='Spectral centroid', color='w')
             ax.legend(loc='upper right')
